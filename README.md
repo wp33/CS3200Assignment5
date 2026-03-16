@@ -70,25 +70,25 @@ This assignment was completed with the assistance of **Claude Opus 4 (by Anthrop
 
 ### How AI was used
 
-Claude was used to generate the initial Node.js query scripts (Query1–5.js), the package.json, and the README. I also used Claude to troubleshoot setup issues during the process, including installing Homebrew, MongoDB, extracting the data file, and pushing to GitHub.
+I used Claude to assist me throughout this assignment. Claude helped me write the Node.js query scripts, set up the project structure, and troubleshoot environment issues along the way.
 
-### Example prompts used
+### Example prompts I used
 
-- *"In this assignment you will be using Node to query and modify a Mongo Document Database..."* — I provided the full assignment description and Claude generated all five query scripts, the package.json, and a README.
-- *"would I select bzip2"* — Asked for help extracting the `.bz2` data file.
-- *"zsh: command not found: brew"* — Troubleshooted Homebrew installation on macOS.
-- *"bunzip2: Can't open input file ieeevis2020Tweets.dump.bz2: No such file or directory"* — Needed help navigating to the correct directory before running the extraction command.
-- *"node_modules folder is in the repo"* — Asked how to remove `node_modules` from the GitHub repository.
-- *"can you give me an overview of the contents"* — Asked Claude to summarize what each file does and the query results.
+- I provided the full assignment description and asked Claude to assist me in writing the five query scripts, the package.json, and a README.
+- *"would I select bzip2"* — I asked Claude for help extracting the `.bz2` data file.
+- *"zsh: command not found: brew"* — I asked Claude to help me troubleshoot my Homebrew installation on macOS.
+- *"bunzip2: Can't open input file ieeevis2020Tweets.dump.bz2: No such file or directory"* — I asked Claude for help navigating to the correct directory before running the extraction command.
+- *"node_modules folder is in the repo"* — I asked Claude how to remove `node_modules` from my GitHub repository.
+- *"can you give me an overview of the contents"* — I asked Claude to summarize what each file does and the query results.
 
-### What Claude helped with
+### What Claude assisted me with
 
-- Writing all five MongoDB aggregation query scripts in Node.js
-- Creating the project structure (package.json, .gitignore, README)
-- Step-by-step guidance for installing Homebrew, MongoDB, and Node dependencies on macOS
-- Extracting the `.bz2` data file and importing it with `mongoimport`
-- Troubleshooting Git issues when pushing to GitHub
-- Explaining the query logic and results
+- Claude assisted me in writing all five MongoDB aggregation query scripts in Node.js
+- Claude helped me create the project structure (package.json, .gitignore, README)
+- Claude provided step-by-step guidance for installing Homebrew, MongoDB, and Node dependencies on macOS
+- Claude helped me extract the `.bz2` data file and import it with `mongoimport`
+- Claude assisted me in troubleshooting Git issues when pushing to GitHub
+- Claude helped me understand the query logic and results
 
 ### Model
 
