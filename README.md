@@ -93,3 +93,5 @@ I used Claude to assist me throughout this assignment. Claude helped me write th
 ### Model
 
 Claude Opus 4 by Anthropic (claude.ai)
+
+> **Note on Query3:** "Who got the most tweets" was interpreted as the user who posted the most tweets.

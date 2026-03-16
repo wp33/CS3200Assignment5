@@ -8,29 +8,29 @@ async function main() {
     const tweetsCol = db.collection("tweets");
     const collections = await db.listCollections().toArray();
     const collNames = collections.map((c) => c.name);
-    if (collNames.includes("users")) await db.collection("users").drop();
-    if (collNames.includes("tweets_only")) await db.collection("tweets_only").drop();
+    if (collNames.includes("user")) await db.collection("user").drop();
+    if (collNames.includes("Tweets_Only")) await db.collection("Tweets_Only").drop();
 
     console.log("Step 1: Extracting unique users...");
     await tweetsCol.aggregate([
       { $group: { _id: "$user.id", user: { $first: "$user" } } },
       { $replaceRoot: { newRoot: "$user" } },
-      { $out: "users" },
+      { $out: "user" },
     ]).toArray();
-    const userCount = await db.collection("users").countDocuments();
-    console.log(`  Created 'users' collection with ${userCount} unique users.`);
+    const userCount = await db.collection("user").countDocuments();
+    console.log(`  Created 'user' collection with ${userCount} unique users.`);
 
-    console.log("Step 2: Creating tweets_only collection...");
+    console.log("Step 2: Creating Tweets_Only collection...");
     await tweetsCol.aggregate([
       { $addFields: { user_id: "$user.id" } },
       { $project: { user: 0 } },
-      { $out: "tweets_only" },
+      { $out: "Tweets_Only" },
     ]).toArray();
-    const tweetCount = await db.collection("tweets_only").countDocuments();
-    console.log(`  Created 'tweets_only' collection with ${tweetCount} tweets.`);
+    const tweetCount = await db.collection("Tweets_Only").countDocuments();
+    console.log(`  Created 'Tweets_Only' collection with ${tweetCount} tweets.`);
 
-    const sample = await db.collection("tweets_only").findOne({});
-    console.log("\nSample tweet_only document:");
+    const sample = await db.collection("Tweets_Only").findOne({});
+    console.log("\nSample Tweets_Only document:");
     console.log(JSON.stringify(sample, null, 2));
   } finally {
     await client.close();
